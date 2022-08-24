@@ -18,13 +18,24 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
+//Select all rows from table
+app.get('/api/get', (req, res) => {
+    const selectAll = 'SELECT * FROM plant_data';
+
+    db.query(selectAll, (err, rows) => {
+        if (err) throw err;
+        res.send(rows);
+    });
+});
+
 //Insert into database
 app.post('/api/insert', (req, res) => {
     const row = req.body.row;
     const insert = "INSERT INTO plant_data (test) VALUES (?)";
 
-    db.query(insert, [row], (err, results) => {
-        console.log(err, results);
+    db.query(insert, [row], (err, rows) => {
+        if (err) throw err;
+        console.log("inserted: " + row);
     });
 });
 

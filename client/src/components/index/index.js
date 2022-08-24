@@ -1,13 +1,23 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import axios from "axios";
 
 export default function Index() {
-    const [test, setState] = useState('');
+    const [data, setData] = useState('');
+    const [rows, setRows] = useState([]);
+
+    useEffect(() => {
+        axios.get('http://localhost:3001/api/get')
+            .then(res => {
+                setRows(res.data);
+            }).catch(err => {
+            console.log(err);
+        });
+    });
 
     //Connects front-end submit to backend db
     const insertRow = () => {
         axios.post('http://localhost:3001/api/insert', {
-            row: test
+            row: data
         }).then(res => {
             alert('Inserted data' + res.data);
         });
@@ -17,10 +27,14 @@ export default function Index() {
         <>
             <h1>Body</h1>
             <input type="text" onChange={(e) => {
-                setState(e.target.value);
+                setData(e.target.value);
             }} />
 
             <button onClick={insertRow}>Submit</button>
+
+            {rows.map((row) => {
+                return <p>{row.test}</p>
+            })}
         </>
     );
 };
