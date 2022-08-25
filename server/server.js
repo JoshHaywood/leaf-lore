@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(cors());
 
 //Select all rows from table
-app.get('https://leaf-lore.herokuapp.com/api/get', (req, res) => {
+app.get('/api/get', (req, res) => {
     const selectAll = 'SELECT * FROM plant_data';
 
     db.query(selectAll, (err, rows) => {
@@ -21,7 +21,7 @@ app.get('https://leaf-lore.herokuapp.com/api/get', (req, res) => {
 });
 
 //Insert into database
-app.post('https://leaf-lore.herokuapp.com/api/insert', (req, res) => {
+app.post('/api/insert', (req, res) => {
     const row = req.body.row;
     const insert = "INSERT INTO plant_data (test) VALUES (?)";
 
