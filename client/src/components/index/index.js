@@ -1,6 +1,9 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
 
+const URL = process.env.URL || 'http://localhost:8080';
+axios.defaults.baseURL = URL;
+
 export default function Index() {
     const [data, setData] = useState('');
     const [rows, setRows] = useState([]);
