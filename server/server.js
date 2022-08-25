@@ -41,6 +41,16 @@ app.delete('/api/delete/:row', (req, res) => {
     });
 });
 
+app.put('/api/update', (req, res) => {
+    const row = req.body.row;
+    const updateRow = "UPDATE plant_data SET test = ? WHERE test = ?";
+
+    db.query(updateRow, [row, row], (err, rows) => {
+        if (err) throw err;
+        console.log('updated: ' + row);
+    });
+});
+
 //Server port
 app.listen(process.env.PORT || PORT, () => {
     console.log('Server started on port ' + PORT);
