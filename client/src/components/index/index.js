@@ -17,19 +17,16 @@ export default function Index() {
         });
     });
 
-    //Connects front-end submit to backend db
+    //Insert into database api request
     const insertRow = () => {
         axios.post('/api/insert', {
             row: data
         });
     };
 
+    //Delete from database api request
     const deleteRow = () => {
-        axios.delete('/api/delete', {
-            data: {
-                row: data
-            }
-        });
+        axios.delete(`/api/delete/${data}`);
     };
 
     return (
@@ -45,7 +42,7 @@ export default function Index() {
                 return (
                     <div>
                         <p>{row.test}</p>
-                        <button onClick={deleteRow}>Delete</button>
+                        <button onClick={() => {deleteRow(row.test)}}>Delete</button>
                     </div>
                 )
             })}
