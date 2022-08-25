@@ -8,6 +8,7 @@ const db = mysql.createPool({
         user: 'root',
         password: 'password',
         database: 'leaf_lore_schema'
+        password: '6217be12',
     */
 
     //Heroku deployment
