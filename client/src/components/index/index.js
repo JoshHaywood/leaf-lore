@@ -24,6 +24,14 @@ export default function Index() {
         });
     };
 
+    const deleteRow = () => {
+        axios.delete('/api/delete', {
+            data: {
+                row: data
+            }
+        });
+    };
+
     return (
         <>
             <h1>Body</h1>
@@ -34,7 +42,12 @@ export default function Index() {
             <button onClick={insertRow}>Submit</button>
 
             {rows.map((row) => {
-                return <p>{row.test}</p>
+                return (
+                    <div>
+                        <p>{row.test}</p>
+                        <button onClick={deleteRow}>Delete</button>
+                    </div>
+                )
             })}
         </>
     );

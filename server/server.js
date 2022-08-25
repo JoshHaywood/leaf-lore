@@ -22,11 +22,21 @@ app.get('/api/get', (req, res) => {
 //Insert into database
 app.post('/api/insert', (req, res) => {
     const row = req.body.row;
-    const insert = "INSERT INTO plant_data (test) VALUES (?)";
+    const insertRow = "INSERT INTO plant_data (test) VALUES (?)";
 
-    db.query(insert, [row], (err, rows) => {
+    db.query(insertRow, [row], (err, rows) => {
         if (err) throw err;
-        console.log("inserted: " + row);
+        console.log('inserted: ' + row);
+    });
+});
+
+app.delete('/api/delete', (req, res) => {
+    const row = req.body.row;
+    const deleteRow = "DELETE FROM plant_data WHERE test = ?";
+
+    db.query(deleteRow, [row], (err, rows) => {
+        if (err) console.log(err);
+        console.log('deleted: ' + row);
     });
 });
 
