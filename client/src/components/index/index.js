@@ -6,7 +6,7 @@ export default function Index() {
     const [rows, setRows] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:3001/api/get')
+        axios.get('https://leaf-lore.herokuapp.com/api/get')
             .then(res => {
                 setRows(res.data);
             }).catch(err => {
@@ -16,10 +16,8 @@ export default function Index() {
 
     //Connects front-end submit to backend db
     const insertRow = () => {
-        axios.post('http://localhost:3001/api/insert', {
+        axios.post('https://leaf-lore.herokuapp.com/api/insert', {
             row: data
-        }).then(res => {
-            alert('Inserted data' + res.data);
         });
     };
 
