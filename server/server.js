@@ -4,19 +4,14 @@ const cors = require('cors');
 const db = require('./config/db');
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 8080;
 
 //Dependencies
 app.use(express.json());
 app.use(cors());
 
-app.use('https://leaf-lore.herokuapp.com/static', express.static(path.join(__dirname, "client/build")));
-app.get("*", (req, res)=>{
-  res.sendFile(path.join(__dirname, "client/build",'index.html'));
-})
-
 //Select all rows from table
-app.get('/api/get', (req, res) => {
+app.get('https://leaf-lore.herokuapp.com/api/get', (req, res) => {
     const selectAll = 'SELECT * FROM plant_data';
 
     db.query(selectAll, (err, rows) => {
@@ -26,7 +21,7 @@ app.get('/api/get', (req, res) => {
 });
 
 //Insert into database
-app.post('/api/insert', (req, res) => {
+app.post('https://leaf-lore.herokuapp.com/api/insert', (req, res) => {
     const row = req.body.row;
     const insert = "INSERT INTO plant_data (test) VALUES (?)";
 
