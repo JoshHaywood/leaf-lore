@@ -50,7 +50,7 @@ export default function Database() {
                     <div>
                         <p>{row.test}</p>
                         <button onClick={() => {deleteRow(row.test)}}>Delete</button>
-                        <input type="text" onChange={(e) => {
+                        <input type="text" onSubmit={(e) => {
                             setRow(e.target.value);
                         }} />
                         <button onClick={updateRow}>Update</button>
