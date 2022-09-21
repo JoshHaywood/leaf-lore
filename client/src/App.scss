@@ -96,10 +96,19 @@ li, ul {
   font-weight: 300;
 }
 
+ul {
+  padding: 0;
+  margin: 0;
+}
+
 button {
   font-size: 1rem;
   color: $primary-text-colour;
   font-weight: 300;
+}
+
+button:focus {
+  outline: none;
 }
 
 img {
@@ -119,32 +128,102 @@ input::placeholder, textarea::placeholder {
 }
 
 // Header
-
 .nav-container {
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 100;
   background-color: $primary-colour;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.3rem;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-  display: flex;
-  justify-content: center;
 
-  .nav-logo-container {
+  .nav-content {
+    width: 60%;
+    margin: 0 auto;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     align-items: center;
 
-    img {
-      width: 50px;
-      height: 50px;
+    .nav-logo-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-right: 1.5rem;
+  
+      img {
+        width: 50px;
+        height: auto;
+      }
+  
+      span {
+        font-size: 1.5rem;
+        margin-left: 0.25rem;
+        font-weight: 600;
+        white-space: nowrap;
+      }
     }
 
-    span {
-      font-size: 1.5rem;
-      margin-left: 0.25rem;
-      font-weight: 600;
+    .nav-links-container {
+      display: flex;
+      flex-direction: row;  
+      align-items: center;
+
+      ul {
+        display: inline-flex;
+  
+        li {
+          margin-right: 1rem;
+          font-size: 1.25rem;
+          
+          a {
+            font-weight: 500;
+          }
+        }
+      }
+    }
+
+    .search-bar-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      button {
+        background: #ffffff;
+        z-index: 10;
+        border: none;
+        margin-left: -1.7rem;
+        margin-top: 0.1rem;
+
+        svg {
+          width: 0.85rem;
+          height: auto;
+        }
+      }
+
+
+    }
+  }
+}
+
+//Media queries
+@media screen and (max-width: 640px) {
+  .nav-container {
+    padding: 0.8rem 0.3rem;
+    .nav-content {
+      flex-direction: column;
+    }
+
+    .nav-links-container {
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .nav-container {
+    .nav-content {
+      width: 90%;
     }
   }
 }
