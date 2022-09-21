@@ -13,14 +13,14 @@ html {
   box-sizing: border-box;
 }
 
-$primary-colour: #ffffff;
+$primary-colour: #d0dbdb;
 $secondary-colour: #ffffff;
 $tertiary-colour: #ffffff;
 $primary-text-colour: #000000;
 $secondary-text-colour: #000000;
 
 body { 
-  background-color: '#000000';
+  background-color: #d0dbdb;
   margin: 0; 
   padding: 0; 
   overflow-x: hidden;
@@ -116,4 +116,32 @@ input, textarea {
 
 input::placeholder, textarea::placeholder {
   color: $primary-text-colour;
+}
+
+// Header
+
+.nav-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  flex: row;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+
+  img {
+    width: 60px;
+    height: 60px;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+
+    li {
+      margin: 0 0.5rem;
+    }
+  }
 }
