@@ -120,28 +120,31 @@ input::placeholder, textarea::placeholder {
 
 // Header
 
-.nav-wrapper {
+.nav-container {
   position: fixed;
   top: 0;
-  left: 0;
   width: 100%;
   z-index: 100;
-  display: flex;
-  flex: row;
-  justify-content: space-between;
+  background-color: $primary-colour;
   padding: 0.5rem 1rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
 
-  img {
-    width: 60px;
-    height: 60px;
-  }
-
-  ul {
+  .nav-logo-container {
     display: flex;
     flex-direction: row;
+    align-items: center;
 
-    li {
-      margin: 0 0.5rem;
+    img {
+      width: 50px;
+      height: 50px;
+    }
+
+    span {
+      font-size: 1.5rem;
+      margin-left: 0.25rem;
+      font-weight: 600;
     }
   }
 }
