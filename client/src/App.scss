@@ -266,8 +266,31 @@ input::placeholder, textarea::placeholder {
       }
     }
   }
+  /* #endregion */
 
-  //Media queries
+  /* #region Error */
+    .error-container {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+
+      h1 {
+        font-size: 3rem;
+        font-weight: 500;
+        margin: 1rem 0;
+      }
+
+      Button {
+        margin-top: 1rem;
+      }
+    }
+
+  /* #endregion */
+
+  /* #region Media queries */
   @media screen and (max-width: 640px) {
     .nav-container {
       padding: 0.8rem 0.3rem;
@@ -298,4 +321,6 @@ input::placeholder, textarea::placeholder {
       }
     }
   }
+
+
 /* #endregion */
