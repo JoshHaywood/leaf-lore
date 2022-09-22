@@ -1,4 +1,5 @@
- import React from "react"
+import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
@@ -13,8 +14,8 @@ export default function Header() {
         {/* Nav links */}
         <div className="nav-links-container">
           <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/results">Results</a></li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/results">Results</Link></li>
           </ul>
 
           {/* Search Bar */}
