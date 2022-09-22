@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
+import { Helmet } from 'react-helmet';
 
 const URL = process.env.URL || 'http://localhost:8080';
 axios.defaults.baseURL = URL;
@@ -39,6 +40,10 @@ export default function Database() {
 
     return (
         <>
+            <Helmet>
+                <title>Leaf Lore | Database</title> 
+            </Helmet>
+
             <input type="text" onChange={(e) => {
                 setData(e.target.value);
             }} />

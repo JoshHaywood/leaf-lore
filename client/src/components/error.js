@@ -9,7 +9,7 @@ export default function Error() {
     return (
         <>
             <Helmet>
-                <title>Leaf Lore | Page not found </title>
+                <title>Leaf Lore | Page not found</title>
             </Helmet>
 
             <div className="error-container">
