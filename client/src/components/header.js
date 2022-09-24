@@ -1,10 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import SearchBar from './search-bar';
 
 export default function Header() {
+  //Scroll state
+  const [scrolled, setScroll] = useState(false)
+
+  // The scroll listener
+  const handleScroll = event => {
+    if (window.scrollY >= 1) {
+      setScroll(true)
+    }
+
+    else {
+      setScroll(false)
+    };
+  };
+
+  window.addEventListener('scroll', handleScroll);
+
   return (
-    <div className="nav-container">
+    <div 
+      className={`${
+        scrolled ? 'nav-container-scrolled' : 'nav-container'
+      }`}>
       <div className="nav-content">
         {/* Nav Logo */}
         <div className="nav-logo-container">

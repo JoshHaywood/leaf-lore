@@ -1,5 +1,6 @@
-import React from "react";
+import React from 'react';
 import { Helmet } from 'react-helmet';
+import Hero from './hero'
 
 export default function Index() {
     return (
@@ -8,7 +9,9 @@ export default function Index() {
                 <title>Leaf Lore | Home</title> 
             </Helmet>
             
-            <h1>Body</h1>
+            <div className='hero-wrapper'>
+                <Hero />
+            </div>
         </>
     );
 };

@@ -154,10 +154,10 @@ input::placeholder, textarea::placeholder {
     top: 0;
     width: 100%;
     z-index: 100;
-    position: relative; 
-    background-color: $primary-colour;
+    position: sticky; 
+    background-color: none;
     padding: 0.5rem 0.3rem;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    box-shadow: 0;
 
     .nav-content {
       width: 60%;
@@ -210,6 +210,12 @@ input::placeholder, textarea::placeholder {
       }
     }
   }
+
+  .nav-container-scrolled {
+    @extend .nav-container;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    background-color: $primary-colour;
+  }
 /* #endregion */
 
 /* #region Footer */
@@ -259,15 +265,40 @@ input::placeholder, textarea::placeholder {
     .footnote-wrapper {
       text-align: center;
       margin-top: 0.5rem;
-      background-color: #8cc63e;
       padding: 0.5rem 0;
 
       a {
         color: #ffffff;
       }
+
+      a:hover {
+        color: #ceefa4;
+      }
     }
   }
   /* #endregion */
+
+/* #region Index */
+
+.hero-wrapper {
+  padding: 0 2.5rem;
+  margin: 0 auto;
+}
+
+/* region Hero */
+
+.hero-container {
+  width: 100vw;
+  height: 100vh;
+  img {
+    width: 30%;
+    height: auto;
+  }
+}
+
+/* #endregion */
+
+/* #endregion */
 
 /* #region Database */
 
@@ -318,6 +349,10 @@ input::placeholder, textarea::placeholder {
           margin-right: 1rem;
         }
       }
+    }
+
+    .hero-wrapper {
+      padding: 0 1.25rem;
     }
   }
 
