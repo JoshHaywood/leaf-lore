@@ -154,6 +154,7 @@ input::placeholder, textarea::placeholder {
     top: 0;
     width: 100%;
     z-index: 100;
+    position: relative; 
     background-color: $primary-colour;
     padding: 0.5rem 0.3rem;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
@@ -241,7 +242,7 @@ input::placeholder, textarea::placeholder {
         }
       }
 
-      .search-bar-container {
+      .search-container {
         span {
           display: block;
           margin-bottom: 0.5rem;
@@ -249,7 +250,7 @@ input::placeholder, textarea::placeholder {
           font-weight: 500;
         }
 
-        .search-input-container {
+        .search-bar-container {
           @extend .search-button;
         }
       }
@@ -268,29 +269,35 @@ input::placeholder, textarea::placeholder {
   }
   /* #endregion */
 
-  /* #region Error */
-    .error-container {
-      width: 100vw;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      text-align: center;
+/* #region Database */
 
-      h1 {
-        font-size: 3rem;
-        font-weight: 500;
-        margin: 1rem 0;
-      }
 
-      Button {
-        margin-top: 1rem;
-      }
+
+/* #endregion */
+
+/* #region Error */
+  .error-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 500;
+      margin: 1rem 0;
     }
 
-  /* #endregion */
+    Button {
+      margin-top: 1rem;
+    }
+  }
 
-  /* #region Media queries */
+/* #endregion */
+
+/* #region Media queries */
   @media screen and (max-width: 640px) {
     .nav-container {
       padding: 0.8rem 0.3rem;
@@ -321,6 +328,4 @@ input::placeholder, textarea::placeholder {
       }
     }
   }
-
-
 /* #endregion */

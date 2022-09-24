@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
@@ -16,10 +16,10 @@ export default function Footer() {
         </div>
 
         {/* Search Bar */}
-        <div className="search-bar-container">
+        <div className="search-container">
           <span>Results</span>
 
-          <div className="search-input-container">
+          <div className="search-bar-container">
             <input type="text" placeholder="Search"/>
           
             <div className="flex">
