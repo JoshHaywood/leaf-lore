@@ -14,9 +14,9 @@ html {
 }
 
 $primary-colour: #d0dbdb;
-$secondary-colour: #ffffff;
+$secondary-colour: #dbe2e1;
 $tertiary-colour: #ffffff;
-$primary-text-colour: #000000;
+$primary-text-colour: #192627;
 $secondary-text-colour: #000000;
 
 body { 
@@ -154,7 +154,6 @@ input::placeholder, textarea::placeholder {
     top: 0;
     width: 100%;
     z-index: 100;
-    position: sticky; 
     background-color: none;
     padding: 0.5rem 0.3rem;
     box-shadow: 0;
@@ -290,9 +289,76 @@ input::placeholder, textarea::placeholder {
 .hero-container {
   width: 100vw;
   height: 100vh;
-  img {
-    width: 30%;
-    height: auto;
+  display: flex;
+  flex-direction: row;
+
+
+  .card-container {
+    display: flex;
+    position: relative;
+
+    .text-container {
+      position: absolute;
+      top: 50%;
+      bottom: 50%;
+      margin-left: 5rem;
+      margin-top: 2.5rem; /* Offsets margin from images background */
+      z-index: 20;
+
+      h2 {
+        font-size: 2.5rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        font-size: 1.25rem;
+        font-weight: 400;
+      }
+    }
+
+    .link-container {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      z-index: 20;
+      display: flex;
+      margin-bottom: 7rem;
+
+      p {
+        font-size: 1rem;
+        font-weight: 400;
+        margin-right: 0.5rem;
+      }
+
+      svg {
+        width: 0.75rem;
+        height: auto;
+      }
+    }
+
+    .image-container {
+      display: flex;
+      margin-bottom: 2.5rem;
+      margin-top: 5rem;
+      position: relative;
+
+      img {
+        z-index: 10;
+        width: 80%;
+      }
+  
+      div {
+        position: absolute;
+        bottom: 0;
+        margin-bottom: 2.5rem;
+        width: 600px;
+        height: 600px;
+        background-color: $secondary-colour;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+        border-radius: 0.375rem;
+      }
+    }
   }
 }
 
