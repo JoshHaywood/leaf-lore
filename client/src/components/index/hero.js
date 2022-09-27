@@ -5,7 +5,7 @@ import SearchBar from '../search-bar';
 export default function Hero() {
     return (
         <div class="hero-container">
-            {/* Cards */}
+            {/* Card */}
             <div class="card-container">
                 {/* Text */}
                 <div class="text-container">
@@ -33,7 +33,11 @@ export default function Hero() {
             {/* Search Bar */}
             <div class="search-container">
                 <h1>Title</h1>
-                <SearchBar />
+                <p>Text Text Text Text</p>
+
+                <div class="search-wrapper">
+                    <SearchBar />
+                </div>
             </div>
         </div>
     );
