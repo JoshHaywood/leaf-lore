@@ -12,7 +12,7 @@ export default function Error() {
                 <title>Leaf Lore | Page not found</title>
             </Helmet>
 
-            <div className="error-container">
+            <div class="error-container">
                 <h1>This page does not exist</h1>
                 <p>The page you were looking for does not exist or has been removed.</p>
 

@@ -9,7 +9,7 @@ export default function Index() {
                 <title>Leaf Lore | Home</title> 
             </Helmet>
             
-            <div className='hero-wrapper'>
+            <div class='hero-wrapper'>
                 <Hero />
             </div>
         </>
