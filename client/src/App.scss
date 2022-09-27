@@ -298,7 +298,7 @@ input::placeholder, textarea::placeholder {
   height: 100vh;
   margin-top: 5rem;
 
-  .card-container {
+  .main-card-container {
     display: flex;
     position: relative;
     min-width: 550px;
@@ -368,23 +368,105 @@ input::placeholder, textarea::placeholder {
     }
   }
 
-  .search-container {
-    z-index: 10;
+  .text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
-    h1 {
-      font-size: 4rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
+    .search-container {
+      z-index: 10;
+  
+      h1 {
+        font-size: 4rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+  
+      p {
+        font-size: 2rem;
+        font-weight: 400;
+        margin-bottom: 1.5rem;
+      }
+  
+      .search-wrapper {
+        @extend .search-button;
+      }
     }
 
-    p {
-      font-size: 2rem;
-      font-weight: 400;
-      margin-bottom: 1.5rem;
-    }
+    .card-wrapper {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-column-gap: 1.25rem;
+      justify-content: space-evenly;
+      margin-right: 3.5rem;
 
-    .search-wrapper {
-      @extend .search-button;
+      .card-container {
+        display: flex;
+        position: relative;
+        width: 33%;
+  
+        .text-container {
+          position: absolute;
+          margin-left: 2.5rem;
+          margin-top: 5rem; /* Offsets margin from images background */
+          z-index: 20;
+  
+          h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+          }
+  
+          p {
+            font-size: 1.25rem;
+            font-weight: 400;
+          }
+        }
+  
+        .image-container {
+          display: flex;
+          margin-bottom: 6.5rem;
+          position: relative;
+  
+          img {
+            z-index: 10;
+            min-width: 265px;
+          }
+      
+          div {
+            position: absolute;
+            bottom: 0;
+            margin-bottom: 1.25rem;
+            aspect-ratio : 1 / 1;
+            width: 100%;
+            min-width: 315px;
+            background-color: $secondary-colour;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+            border-radius: 0.375rem;
+          }
+  
+          .link-container {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            z-index: 10;
+            margin-bottom: 1.25rem;
+            margin-left: 15rem;
+      
+            p {
+              font-size: 1rem;
+              font-weight: 400;
+              margin-right: 0.5rem;
+            }
+      
+            svg {
+              width: 0.75rem;
+              height: auto;
+            }
+          }
+        }
+      }
     }
   }
 }
